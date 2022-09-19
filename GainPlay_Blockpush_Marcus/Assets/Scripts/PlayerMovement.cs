@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     public PauseMenu pauseMenu;
+    public Spawner spawner;
    
     // Update is called once per frame
     void Update()
