@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour
     Vector3[] vertices;
     int[] triangles;
     public SpawnObject spawnObject;
+    private int RandomValue;
 
     private void Start()
     {
@@ -35,7 +36,13 @@ public class Spawner : MonoBehaviour
             {
                 float y = 1;
                 vertices[i] = new Vector3(x, y, z);
-                spawnObject.CreateObject(x, y, z);
+                RandomValue = Random.Range(0, 10);
+                int arrayRange = Random.Range(0, spawnObject.objects.Length);
+                GameObject toSpawn = spawnObject.objects[arrayRange];
+                if (RandomValue <= 4)
+                {
+                    Instantiate(toSpawn, new Vector3(x, y, z), Quaternion.identity);
+                }
                 i++;
             }
         }
