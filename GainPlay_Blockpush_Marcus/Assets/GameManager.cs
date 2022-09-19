@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject[] badBlocks;
     public float pickupTimer;
+    public int points;
     void Start()
     {
         
