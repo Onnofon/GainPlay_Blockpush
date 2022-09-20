@@ -81,6 +81,7 @@ public class Spawner : MonoBehaviour
     public void NewPlatform()
     {
         difficulty += 0.4f;
+        GameManager.Instance.blockSpeed = difficulty;
         platformSpawnValue = Random.Range(0, 8);
         if (platformSpawnValue > 1)
         {
