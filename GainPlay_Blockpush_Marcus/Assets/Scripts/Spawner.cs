@@ -12,7 +12,10 @@ public class Spawner : MonoBehaviour
     public SpawnObject spawnObject;
     private int RandomValue;
     public GameObject platform;
-    private int difficulty = 1;
+    public float difficulty = 1;
+    public SpawnPowerUp powerUpSpawner;
+    public GameObject[] chunks;
+    public int platformSpawnValue;
 
     private void Start()
     {
@@ -30,8 +33,8 @@ public class Spawner : MonoBehaviour
     private void CreateTerrain()
     {
         vertices = new Vector3[(xSize + 1) * (zSize + 1)];
- 
 
+        powerUpSpawner.Spawn();
         for (int i = 0, z = 0; z <= zSize; z++)
         {
             for (int x = 0; x <= xSize; x++)
@@ -77,9 +80,18 @@ public class Spawner : MonoBehaviour
     }
     public void NewPlatform()
     {
-        difficulty++;
-        Instantiate(platform, new Vector3(9, 0, 15), Quaternion.identity);
-        CreateTerrain();
+        difficulty += 0.4f;
+        platformSpawnValue = Random.Range(0, 8);
+        if (platformSpawnValue > 1)
+        {
+            Instantiate(platform, new Vector3(9, 0, 15), Quaternion.identity);
+            CreateTerrain();
+        }
+        else
+        {
+            platformSpawnValue = Random.Range(0, chunks.Length);
+            Instantiate(chunks[platformSpawnValue], new Vector3(9, 0, 15), Quaternion.identity);
+        }
     }
 
     private void OnDrawGizmos()

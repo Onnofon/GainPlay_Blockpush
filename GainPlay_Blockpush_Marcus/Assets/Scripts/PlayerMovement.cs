@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKeyDown("escape"))
         {
             pauseMenu.PauseGame();
+            Time.timeScale = 0;
         }
     }
 
@@ -32,6 +33,11 @@ public class PlayerMovement : MonoBehaviour
         {
             gameManager.points = gameManager.points + 10;
             Destroy(other.gameObject);
+        }
+
+        if (other.tag == "BadBlock")
+        {
+            gameManager.gameOver.GameOverScreen();
         }
     }
 }

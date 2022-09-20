@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject mainCanvas;
     public GameObject pauseCanvas;
+    public GameManager gameManager;
+    public Text text;
+
+    private void Update()
+    {
+        text.text = "Score " + gameManager.points.ToString();
+    }
 
     public void PauseGame()
     {
@@ -18,5 +26,6 @@ public class PauseMenu : MonoBehaviour
     {
         mainCanvas.SetActive(true);
         pauseCanvas.SetActive(false);
+        Time.timeScale = 1;
     }
 }

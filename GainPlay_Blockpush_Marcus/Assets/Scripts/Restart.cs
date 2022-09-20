@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ChangeScene : MonoBehaviour
+public class Restart : MonoBehaviour
 {
     public string name;
 
@@ -12,5 +12,4 @@ public class ChangeScene : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(name);
     }
-    
 }
