@@ -4,8 +4,20 @@ using UnityEngine;
 
 public class Destroyer : MonoBehaviour
 {
+    public GameOver gameOver;
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
+        if(other.tag == "Player")
+        {
+            gameOver.GameOverScreen();
+        }
+        else
+        {
+            Destroy(other.gameObject);
+        }
+
+               
+
+       
     }
 }

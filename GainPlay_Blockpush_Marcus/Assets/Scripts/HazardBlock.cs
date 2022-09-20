@@ -8,6 +8,7 @@ public class HazardBlock : MonoBehaviour
     public Material hazardMat;
     public float timeLeft;
     public bool turnedGood;
+    public Rigidbody rb;
     // Start is called before the first frame update
      void Update()
     {
@@ -18,12 +19,14 @@ public class HazardBlock : MonoBehaviour
             {
                 this.gameObject.GetComponent<MeshRenderer>().material = goodMat;
                 this.gameObject.tag = "Goodblock";
+                rb.mass = 1;
             }
             else
             {
                 this.gameObject.GetComponent<MeshRenderer>().material = hazardMat;
                 this.gameObject.tag = "BadBlock";
                 turnedGood = false;
+                rb.mass = 10000;
             }
         }
     }

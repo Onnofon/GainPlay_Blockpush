@@ -9,10 +9,10 @@ public class BlockPush : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Goodblock")
+        if (other.gameObject.tag == "Goodblock")
         {
             col = true;
-            rb.isKinematic = false;
+            rb.mass = 1;
         }
     }
     private void OnTriggerExit(Collider other)
@@ -20,14 +20,15 @@ public class BlockPush : MonoBehaviour
         if (other.gameObject.tag == "Goodblock")
         {
             col = false;
+            rb.mass = 10000;
         }
     }
 
     private void Update()
     {
-        if(col == false)
+        if (col == false)
         {
-            rb.isKinematic = true;
+           // rb.mass = 10000;
         }
     }
 }

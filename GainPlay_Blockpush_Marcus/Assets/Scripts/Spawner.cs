@@ -14,6 +14,7 @@ public class Spawner : MonoBehaviour
     public GameObject platform;
     private int difficulty = 1;
     public SpawnPowerUp powerUpSpawner;
+    public GameObject chunks;
 
     private void Start()
     {
@@ -79,8 +80,16 @@ public class Spawner : MonoBehaviour
     public void NewPlatform()
     {
         difficulty++;
-        Instantiate(platform, new Vector3(9, 0, 15), Quaternion.identity);
-        CreateTerrain();
+        RandomValue = Random.Range(0, 10);
+        if (RandomValue <= 7)
+        {
+            Instantiate(platform, new Vector3(9, 0, 15), Quaternion.identity);
+            CreateTerrain();
+        }
+        else
+        {
+            Instantiate(chunks, new Vector3(9, 0, 15), Quaternion.identity);
+        }
     }
 
     private void OnDrawGizmos()
