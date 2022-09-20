@@ -12,9 +12,10 @@ public class Spawner : MonoBehaviour
     public SpawnObject spawnObject;
     private int RandomValue;
     public GameObject platform;
-    private int difficulty = 1;
+    public float difficulty = 1;
     public SpawnPowerUp powerUpSpawner;
-    public GameObject chunks;
+    public GameObject[] chunks;
+    public int platformSpawnValue;
 
     private void Start()
     {
@@ -79,16 +80,17 @@ public class Spawner : MonoBehaviour
     }
     public void NewPlatform()
     {
-        difficulty++;
-        RandomValue = Random.Range(0, 10);
-        if (RandomValue <= 7)
+        difficulty += 0.4f;
+        platformSpawnValue = Random.Range(0, 8);
+        if (platformSpawnValue > 1)
         {
             Instantiate(platform, new Vector3(9, 0, 15), Quaternion.identity);
             CreateTerrain();
         }
         else
         {
-            Instantiate(chunks, new Vector3(9, 0, 15), Quaternion.identity);
+            platformSpawnValue = Random.Range(0, chunks.Length);
+            Instantiate(chunks[platformSpawnValue], new Vector3(9, 0, 15), Quaternion.identity);
         }
     }
 
