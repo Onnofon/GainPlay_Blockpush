@@ -11,6 +11,8 @@ public class Spawner : MonoBehaviour
     int[] triangles;
     public SpawnObject spawnObject;
     private int RandomValue;
+    public GameObject platform;
+    private int difficulty = 1;
 
     private void Start()
     {
@@ -39,7 +41,7 @@ public class Spawner : MonoBehaviour
                 RandomValue = Random.Range(0, 10);
                 int arrayRange = Random.Range(0, spawnObject.objects.Length);
                 GameObject toSpawn = spawnObject.objects[arrayRange];
-                if (RandomValue <= 1)
+                if (RandomValue <= difficulty)
                 {
                     Instantiate(toSpawn, new Vector3(x, y, z), Quaternion.identity);
                 }
@@ -72,6 +74,12 @@ public class Spawner : MonoBehaviour
             vert++;
         }
 
+    }
+    public void NewPlatform()
+    {
+        difficulty++;
+        Instantiate(platform, new Vector3(9, 0, 15), Quaternion.identity);
+        CreateTerrain();
     }
 
     private void OnDrawGizmos()
