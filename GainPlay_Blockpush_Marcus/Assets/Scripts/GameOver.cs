@@ -16,5 +16,6 @@ public class GameOver : MonoBehaviour
         text.text = "Score " + gameManager.points.ToString();
         mainCanvas.SetActive(false);
         gameOverCanvas.SetActive(true);
+        gameManager.Save();
     }
 }

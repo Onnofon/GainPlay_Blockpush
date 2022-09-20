@@ -11,7 +11,9 @@ public class ChangeScene : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(name);
+        GameManager.Instance.playing = false;
         Destroy(GameManager.Instance);
+        
     }
     
 }

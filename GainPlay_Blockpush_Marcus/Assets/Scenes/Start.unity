@@ -762,7 +762,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Title
+  m_Text: Blocky Push
 --- !u!222 &1805918582
 CanvasRenderer:
   m_ObjectHideFlags: 0
