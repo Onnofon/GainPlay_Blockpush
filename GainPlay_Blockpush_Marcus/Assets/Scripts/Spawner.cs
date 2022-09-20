@@ -39,7 +39,7 @@ public class Spawner : MonoBehaviour
                 RandomValue = Random.Range(0, 10);
                 int arrayRange = Random.Range(0, spawnObject.objects.Length);
                 GameObject toSpawn = spawnObject.objects[arrayRange];
-                if (RandomValue <= 4)
+                if (RandomValue <= 1)
                 {
                     Instantiate(toSpawn, new Vector3(x, y, z), Quaternion.identity);
                 }
