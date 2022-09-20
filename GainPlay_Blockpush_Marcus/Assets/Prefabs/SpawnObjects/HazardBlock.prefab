@@ -14,12 +14,13 @@ GameObject:
   - component: {fileID: 8229031193057379424}
   - component: {fileID: 4043810419366228873}
   - component: {fileID: 6540015061588667965}
+  - component: {fileID: 1326969370693259442}
   m_Layer: 0
   m_Name: HazardBlock
-  m_TagString: Untagged
+  m_TagString: BadBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6091261829677795197
 Transform:
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3368557619530856747}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -125,4 +126,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c550cd4916c3df34e93b484fec5d82f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 2.5
+--- !u!114 &1326969370693259442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3368557619530856747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca651bd59f2a0c14186e3c98d0ed74f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goodMat: {fileID: 2100000, guid: 7d99d125cfddef445a71cfc62119db73, type: 2}
+  hazardMat: {fileID: 2100000, guid: 6688066d9bfb821438ea1744a7d0a926, type: 2}
+  timeLeft: 0
+  turnedGood: 0

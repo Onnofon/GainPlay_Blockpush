@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public PauseMenu pauseMenu;
     public Spawner spawner;
+    public GameManager gameManager;
    
     // Update is called once per frame
     void Update()
@@ -21,6 +22,16 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKeyDown("escape"))
         {
             pauseMenu.PauseGame();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.tag == "Point")
+        {
+            gameManager.points = gameManager.points + 10;
+            Destroy(other.gameObject);
         }
     }
 }
