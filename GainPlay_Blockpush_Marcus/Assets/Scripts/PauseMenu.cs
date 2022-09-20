@@ -17,6 +17,7 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
+        gameManager.playing = false;
         mainCanvas.SetActive(false);
         pauseCanvas.SetActive(true);
 
@@ -24,6 +25,7 @@ public class PauseMenu : MonoBehaviour
     
     public void ResumeGame()
     {
+        gameManager.playing = true;
         mainCanvas.SetActive(true);
         pauseCanvas.SetActive(false);
         Time.timeScale = 1;

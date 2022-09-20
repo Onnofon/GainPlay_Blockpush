@@ -467,6 +467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 445254342}
   - component: {fileID: 445254341}
+  - component: {fileID: 445254343}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -490,8 +491,16 @@ MonoBehaviour:
   pickupTimer: 5
   points: 0
   timer: 20
+  timePlayed: 0
   gameOver: {fileID: 863220606}
   blockSpeed: 2
+  saver: {fileID: 445254343}
+  playing: 1
+  so:
+    score: 0
+    gameName: Blocky Push
+    timePlayed: 0
+    timeCode: 
 --- !u!4 &445254342
 Transform:
   m_ObjectHideFlags: 0
@@ -506,6 +515,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &445254343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445254340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c936964f3e5d0a4780959421413a711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &480946717
 GameObject:
   m_ObjectHideFlags: 0
