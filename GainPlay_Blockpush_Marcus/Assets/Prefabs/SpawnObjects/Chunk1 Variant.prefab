@@ -300,7 +300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c550cd4916c3df34e93b484fec5d82f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
 --- !u!114 &2435750794295311862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,7 +480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c550cd4916c3df34e93b484fec5d82f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
 --- !u!114 &9032269484002027584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3285,6 +3283,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1264959124109902429, guid: 283ad9b506b1c5b4a91700eb86d5c9bd, type: 3}
+      propertyPath: col
+      value: 
+      objectReference: {fileID: 8773567812378849883}
+    - target: {fileID: 3244190248388090293, guid: 283ad9b506b1c5b4a91700eb86d5c9bd, type: 3}
+      propertyPath: m_RootOrder
+      value: 42
+      objectReference: {fileID: 0}
     - target: {fileID: 4241481695411404064, guid: 283ad9b506b1c5b4a91700eb86d5c9bd, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3335,6 +3341,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283ad9b506b1c5b4a91700eb86d5c9bd, type: 3}
+--- !u!65 &8773567812378849883 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 744762313093957156, guid: 283ad9b506b1c5b4a91700eb86d5c9bd, type: 3}
+  m_PrefabInstance: {fileID: 8328303671472567423}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5280700573352806751 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4241481695411404064, guid: 283ad9b506b1c5b4a91700eb86d5c9bd, type: 3}
