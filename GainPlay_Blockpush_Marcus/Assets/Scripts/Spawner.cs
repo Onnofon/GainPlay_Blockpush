@@ -13,6 +13,7 @@ public class Spawner : MonoBehaviour
     private int RandomValue;
     public GameObject platform;
     private int difficulty = 1;
+    public SpawnPowerUp powerUpSpawner;
 
     private void Start()
     {
@@ -30,8 +31,8 @@ public class Spawner : MonoBehaviour
     private void CreateTerrain()
     {
         vertices = new Vector3[(xSize + 1) * (zSize + 1)];
- 
 
+        powerUpSpawner.Spawn();
         for (int i = 0, z = 0; z <= zSize; z++)
         {
             for (int x = 0; x <= xSize; x++)

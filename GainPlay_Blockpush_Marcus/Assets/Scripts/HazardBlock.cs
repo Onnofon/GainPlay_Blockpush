@@ -17,10 +17,12 @@ public class HazardBlock : MonoBehaviour
             if (timeLeft > 0)
             {
                 this.gameObject.GetComponent<MeshRenderer>().material = goodMat;
+                this.gameObject.tag = "Goodblock";
             }
             else
             {
                 this.gameObject.GetComponent<MeshRenderer>().material = hazardMat;
+                this.gameObject.tag = "BadBlock";
                 turnedGood = false;
             }
         }
