@@ -12,6 +12,6 @@ public class Canvas : MonoBehaviour
     private void Update()
     {
         text.text = "Score " + gameManager.points.ToString();
-        timerText.text = "Timer: " + gameManager.timer.ToString();
+        timerText.text = "Timer: " + gameManager.timer.ToString("F1");
     }
 }
